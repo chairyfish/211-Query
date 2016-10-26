@@ -31,6 +31,10 @@
   .markerText{
     font-size: 14px;
   }
+  .markerDistrict{
+    color: #666;
+    font-size: 14px;
+  }
 	
   	.form-wrapper {
   	position:absolute;
@@ -348,6 +352,10 @@ function addFeatureInfo(info){
   content.appendChild(elementImg);
   var elementBr=document.createElement('br');
   content.appendChild(elementBr);
+  var elementP1=document.createElement('p');
+  elementP1.className="markerDistrict";
+  setInnerText(elementP1,info.distric);
+  content.appendChild(elementP1);
   var elementA=document.createElement('a');
   elementA.className="markerUrl";
   elementA.href=info.url;
@@ -356,7 +364,7 @@ function addFeatureInfo(info){
   var elementDiv=document.createElement('div');
   elementDiv.className="markerText";
   setInnerText(elementDiv,info.state);
-  content.appendChild(elementDiv);
+  content.appendChild(elementDiv); 
 }
 
 
